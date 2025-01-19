@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Swap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .wallet-icon {
+            float: right;
+            font-size: 2em;
+            color: #ccc;
+        }
+
+        .swap-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d3d3d3;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 40px; /* To accommodate the arrow overlay */
+
+            position: relative;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .swap-box img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .swap-box input {
+            border: 1px red black;
+            background-color: transparent;
+            font-size: 1.2em;
+            text-align: center;
+            flex-grow: 1;
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 6px;
+        }
+
+        .arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 20%; /* Adjust this to position arrow correctly */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(white, yellow);
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 10; /* Ensure it's on top */
+        }
+
+        .arrow img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .info-text {
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-order {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #f0c22f;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-align: center;
+            color: #333;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        .order{
+            border-top: 2px black solid;
+            border-bottom: 2px black solid;
+        }
+
+        .token-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .token-info div {
+            background-color: #666;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+            margin-bottom: 10px;
+            border: 1px black solid;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .token-info div span {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .token-btm{
+            background-color:#ccc;
+            border-radius: 7px;
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type="number"] {
+        -moz-appearance: textfield;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <i class="fa fa-wallet wallet-icon"></i>
+
+    <br>
+    <br>
+    
+
+    <div class="swap-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Toncoin-logo-official.svg" alt="Ton logo">
+        <div class="input-container">
+            <input type="number" placeholder="0.5">
+            <span class="unit">Ton</span>
+        </div>
+    </div>
+
+    <div class="arrow">
+        <img src="../image/down.png" alt="Arrow Down">
+    </div>
+
+    <div class="swap-box">
+        <img src="../image/mint.png" alt="Derve logo">
+        <input type="number" value="Derve" ><span class="unit">Derve</span>
+    </div>
+
+
+  
+    <p class="info-text">The minimum bid is 0.5 Ton. Buying 100 Ton gives a 5% bonus in Derve, 1000 gives 10% bonus.</p>
+<div class="order">
+    <br>
+    <button class="btn-order">Place order</button>
+    
+</div>
+<br>
+     <div class="token-btm">
+        <BR>
+    <div class="token-info">
+        <div>
+            TOTAL TOKEN FOR SALE
+            <br><span>45,000,000</span>
+        </div>
+        <BR>
+        <div>
+            TOTAL TOKENS REMAINING FOR SALE
+            <br><span>45,000,000</span>
+        </div>
+        <BR>
+    </div>
+</div>
+<nav>
+    <ul>
+      <li><a><i class="fas fa-home"></i> Home</a></li>
+      <li><a><i class="fas fa-tasks"></i> Tasks</a></li>
+      <li><a href="pages/sales.html"><i><img src="../image/sale.png" class="sale-icons"></i> Earn</a></li>
+      <li ><a><i class="fas fa-user-friends"></i> Frens</a></li>
+      <li><a><i><img src="../image/leaderboard.png" class="icons"></i> Leaderboard</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+
+</body>
+</html>

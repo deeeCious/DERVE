@@ -1,0 +1,156 @@
+
+
+/* Global styling with background image and overlay */
+.sale-icons{
+    width: 50px;
+    height: 50px;
+  
+  }
+  
+  .icons{
+    width: 30px;
+    height: 30px;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-bottom: 60px; /* To avoid content being hidden under the navbar */
+    color: #550909; /* Set text color to white for contrast */
+    position: relative; /* To make sure the overlay stays in place */
+    background-image: url('image/hmbg.jfif'); /* Update this path */
+    background-size: cover; /* Ensures the background covers the entire page */
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .mint{
+    height: 70px;
+  }
+  .big-logo{
+    background-color: white;
+    width: 400px;            /* Full width of the viewport */
+    height: 400px;
+    /*aspect-ratio: 1/1;     /* Keeps height proportional to width, making it a perfect circle */
+    background-color: white;  /* Circle color */
+    opacity: 0.8;
+    border-radius: 100%;      /* Makes the shape a circle */
+    margin-bottom: 200px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .icon-container {
+      display: flex;
+      justify-content: space-between; /* Aligns one icon to the left and the other to the right */
+      align-items: center;            /* Centers the icons vertically */
+      width: 100%;                    /* Full width of container */
+      height: 100px;
+      padding: 10px;                  /* Optional padding */
+      /*background-color: #f0f0f0;      /* Optional background */
+    }
+  .top{
+    margin-bottom: 5x;
+  }
+  
+  .wallet-icon{
+    float: center;
+    
+  }
+  .token-balance{
+    background-color: white;
+    width: 90%;
+    height: 100px;
+    opacity: 0.5;
+    margin-bottom: 200px;
+    border-radius: 50px;
+    padding-top: 10px;
+    margin: auto;
+    color: black;
+    text-align: center;
+  }
+  /* Add an overlay with opacity */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background-color: rgba(59, 21, 21, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1; /* Make sure the overlay stays behind all content */
+  }
+  
+  /* Header styling */
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: #fff;
+  }
+  
+  /* Upgrade button */
+  .upgrade-btn {
+    background-color: #6200ea;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  
+  /* Farming section styling */
+  .farming-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .farming-status p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    
+  }
+  
+  /* Static navbar styling */
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Semi-transparent background */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  nav ul li {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+  }
+  
+  /* Icon color and size */
+  nav ul li i {
+    color: black;
+    font-size: 1.5rem;
+  }
+  
+  /* MEDIA QUERY to hide text on small screens */
+  @media (max-width: 600px) {
+    nav ul li {
+      font-size: 0; /* This hides the text */
+    }
+  
+    nav ul li i {
+      font-size: 1.5rem; /* Ensure icons maintain their size */
+    }
+  
+    nav ul li i::before {
+      margin-right: 0; /* Remove the space between icon and (now hidden) text */
+    }
+  }

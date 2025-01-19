@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #72edf2, #5151e5);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 12px; 
+    border: 5px solid transparent;
+    background: linear-gradient(45deg, #080808, #000000, #021f20);
+    background-clip: border-box;
+    z-index: -1;
+}
+
+h1 {
+    -webkit-background-clip: text;
+    color: White;
+
+}
+.project-title {
+    background: linear-gradient(45deg, #0202c3, #ff72e6);
+    border-right: 5px solid red;
+    border-bottom: 5px solid red;
+    border-bottom: 10px;
+    border-right: 5px;
+    background: linear-gradient(45deg, #5151e5, #ff72e6);
+    font-size: 6px;
+    line-height: 1;
+    width: 100%;
+    
+}
+
+
+h2 {
+    background: linear-gradient(0deg, #f0f0f4, #ff72e6);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.wallet-address {
+    font-size: 15px;
+    color: #a93636;
+    margin-bottom: 20px;
+    padding-bottom: 120px;
+}
+
+/* Custom Image Input */
+
+
+button {
+    padding: 15px;
+    width: 100%;
+    background-color: #5151e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button:hover {
+    background-color: #ff72e6;
+}
+
+.connect-btn {
+    background-color: hsl(253, 84%, 56%);
+    margin-bottom: 20px;
+}
+
+.connect-btn:hover {
+    background-color: #5151e5;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #5151e5;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.navbar a {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ff72e6;
+    transform: scale(1.1);
+    color: #333;
+}
+
+.navbar a.active {
+    background-color: #ff72e6;
+}
+
+.navbar a i {
+    font-size: 15px;
+}
+
+/*Icons for smaller screens */
+@media (max-width: 768px) {
+    .navbar a span {
+        display: none;
+    }
+
+    .navbar a i {
+        display: block;
+    }
+}
+
+/* Animation for the navbar icons */
+@keyframes iconBounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.navbar a:hover i {
+    animation: iconBounce 0.6s ease-in-out;
+}
